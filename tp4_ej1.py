@@ -15,8 +15,7 @@ def ingreso_entero(mensaje):
          entero = int(ingreso)
     except ValueError as err:
          raise IngresoIncorrecto("No era un número!") from err
-    return entero
-
+    
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     print('\nFuncion 2.Ingresar un número entero y vuelva a solicitarlo en caso de ingresar un valor incorrecto')
@@ -31,10 +30,9 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
             print('No es un numero entero')
             
         if i == (cantidad_reintentos -1):
-            raise IngresoIncorrecto("No era un número!") from err
-            return entero 
-            
-
+            raise IngresoIncorrecto("Cantidad de intentos agotada!") from err
+       
+       
 def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
     print('\nFuncion 3.Ingresar un número entre 2 rangos')
     print(f'{mensaje}{valor_minimo} y {valor_maximo}: ')
@@ -46,12 +44,8 @@ def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
         else:
             print('Tu numero esta en el rango')
     except ValueError as err:
-        raise IngresoIncorrecto("No era un numero!") from err
+        raise IngresoIncorrecto("Numero no cumple con lo indicado") from err
     
-    return entero
-
-    
-
 
 if __name__ == "__main__":
     
