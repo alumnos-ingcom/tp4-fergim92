@@ -4,54 +4,61 @@
 ################
 
 class IngresoIncorrecto(Exception):
-    """Esta es la Excepcion para el ingreso incorrecto"""
     pass
 
-
 def ingreso_entero(mensaje):
-    print('Funcion 1.Ingreso de numeros enteros')
     ingreso = input(mensaje + " #")
     try:
          entero = int(ingreso)
     except ValueError as err:
          raise IngresoIncorrecto("No era un número!") from err
+    return entero
     
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
-    print('\nFuncion 2.Ingresar un número entero y vuelva a solicitarlo en caso de ingresar un valor incorrecto')
-    print(f'{mensaje}\nTiene {cantidad_reintentos} intentos')
     for i in range(cantidad_reintentos):
         ingreso = input(f'intento {i+1}: ')
-        
         try:
             entero = int(ingreso)
-            return entero
+            break
         except ValueError as err:
-            print('No es un numero entero')
-            
+            print('No es un numero entero!')
         if i == (cantidad_reintentos -1):
             raise IngresoIncorrecto("Cantidad de intentos agotada!") from err
-       
-       
-def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
-    print('\nFuncion 3.Ingresar un número entre 2 rangos')
-    print(f'{mensaje}{valor_minimo} y {valor_maximo}: ')
-    ingreso = input()
-    try:
-        entero = int(ingreso)
-        if (entero > valor_maximo) or (entero < valor_minimo):
-            print('No esta en el rango solicitado')
-        else:
-            print('Tu numero esta en el rango')
-    except ValueError as err:
-        raise IngresoIncorrecto("Numero no cumple con lo indicado") from err
+    return entero
+
     
+def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
+    print(f'{mensaje}\nEntre {valor_minimo} y {valor_maximo}')
+    entero = input('Numero entero a evaluar: ')
+    
+    try:
+        entero = int(entero)
+    except ValueError as err:
+        raise IngresoIncorrecto("No esta ingresando numeros enteros!!!") from err
+    
+    if (entero <= valor_maximo) or (entero >= valor_minimo):
+        print('Tu numero esta en el rango')
+    else:
+        print('No esta en el rango solicitado')
+    
+def prueba():
+    print(f'Ingreso de números enteros\n')
+    mensaje = 'Ingrese un numero entero:'
+    numero1 = ingreso_entero(mensaje)
+    
+    print('\nIngresar un numero entero. Tiene reintentos limitados')
+    mensaje = 'Ingrese el numero'
+    numero2 = ingreso_entero_reintento(mensaje, cantidad_reintentos=5)
+    
+    mensaje ='\nIngreso de un número entero entre dos valores'
+    ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10)
+
 
 if __name__ == "__main__":
+    prueba()
     
-    ingreso_entero('Ingrese un numero entero') 
-    ingreso_entero_reintento('Ingrese un numero entero', cantidad_reintentos=5)
-    ingreso_entero_restringido('Ingrese un numero entre ',valor_minimo=0, valor_maximo=10)
+    
     
     
     
