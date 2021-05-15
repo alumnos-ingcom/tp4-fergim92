@@ -8,11 +8,14 @@ import tp4_ej1 as soporte
 def division_lenta(dividendo, divisor):
     cociente = 0
     
-    if dividendo < divisor:
-        mensaje = print('Es una division de enteros!!el dividendo tiene que ser mayor al divisor!!')
+    if divisor == 0:
+        mensaje = print('NO SE PUEDE DIVIDIR POR CERO!!!')
         return mensaje
-        
-    if dividendo > 0 and divisor > 0:         #(+)(+) =(+)
+    elif dividendo == 0:
+        cociente = 0
+        resto = divisor
+   
+    elif dividendo > 0 and divisor > 0:         #(+)(+) =(+)
         while dividendo >= divisor:
             dividendo -= divisor
             cociente +=1
@@ -44,8 +47,8 @@ def division_lenta(dividendo, divisor):
     print(f'El resto de la division es: {resto}')
     
 def prueba():
-    dividendo = soporte.ingreso_entero('Ingrese el dividendo: ')
-    divisor = soporte.ingreso_entero('Ingrese el divisor: ')
+    dividendo = soporte.ingreso_entero('Ingrese el dividendo:')
+    divisor = soporte.ingreso_entero('Ingrese el divisor:')
     division_lenta(dividendo, divisor)
     
     
