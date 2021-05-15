@@ -9,9 +9,9 @@ class IngresoIncorrecto(Exception):
 def ingreso_entero(mensaje):
     ingreso = input(mensaje + " #")
     try:
-         entero = int(ingreso)
+        entero = int(ingreso)
     except ValueError as err:
-         raise IngresoIncorrecto("No era un número!") from err
+        raise IngresoIncorrecto("No era un número!") from err
     return entero
     
 
