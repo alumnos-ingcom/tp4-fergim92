@@ -2,10 +2,8 @@
 # Fernando Gimenez - @fergim92
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-import tp4_ej1 as soporte
-
-class IngresoIncorrecto(Exception):
-    pass
+from tp4_ej1 import ingreso_entero
+from tp4_ej1 import IngresoIncorrecto
 
 def suma_lenta(numero, otro_numero):
   
@@ -24,8 +22,8 @@ def suma_lenta(numero, otro_numero):
             
 def prueba():
    print('Ingrese 2 numeros para sumarlos')
-   numero = soporte.ingreso_entero('Ingrese un numero: ')
-   otro_numero = soporte.ingreso_entero('Ingrese otro numero: ')
+   numero = ingreso_entero('Ingrese un numero: ')
+   otro_numero = ingreso_entero('Ingrese otro numero: ')
    suma_lenta(numero, otro_numero)
       
 if __name__ == "__main__":        

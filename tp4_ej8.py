@@ -2,8 +2,8 @@
 # Fernando Gimenez - @fergim92
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-import tp4_ej1 as soporte
-import tp4_ej6 as soporte2
+from tp4_ej1 import ingreso_entero
+from tp4_ej6 import maximo, minimo
 
 class IngresoIncorrecto(Exception):
     pass
@@ -11,8 +11,8 @@ class IngresoIncorrecto(Exception):
 def ordenar_mayor_a_menor(uno, dos, tres):
     lista = [uno, dos, tres]
     suma = uno + dos + tres
-    maxim = soporte2.maximo(lista)   
-    mini = soporte2.minimo(lista)
+    maxim = maximo(lista)   
+    mini = minimo(lista)
     n_medio = suma - mini - maxim
     tupla = (maxim, n_medio, mini)
         
@@ -21,8 +21,8 @@ def ordenar_mayor_a_menor(uno, dos, tres):
 def ordenar_menor_a_mayor(uno, dos, tres):
     lista = [uno, dos, tres]
     suma = uno + dos + tres              #sumamos los 3 numeros
-    maxim = soporte2.maximo(lista)       #maximo de la lista usando la funcion del ejercicio anterior
-    mini = soporte2.minimo(lista)        #minimo de la lista usando la funcion del ejercicio anterior
+    maxim = maximo(lista)       #maximo de la lista usando la funcion del ejercicio anterior
+    mini = minimo(lista)        #minimo de la lista usando la funcion del ejercicio anterior
     n_medio = suma - mini - maxim        # a la suma total le restamos maximo y minimo y obtenemos el tercer numero que falta
     tupla = (mini, n_medio, maxim)
         
@@ -31,9 +31,9 @@ def ordenar_menor_a_mayor(uno, dos, tres):
             
 def prueba():
     print('Ingrese 3 numeros para ordenarlos de menor a mayor y luego de mayor a menor')
-    uno = soporte.ingreso_entero('Numero 1: ')
-    dos = soporte.ingreso_entero('Numero 2: ')
-    tres = soporte.ingreso_entero('Numero 3: ')
+    uno = ingreso_entero('Numero 1:')
+    dos = ingreso_entero('Numero 2:')
+    tres = ingreso_entero('Numero 3:')
     
     print('Ordenados de mayor a menor')
     tupla = ordenar_mayor_a_menor(uno, dos, tres)

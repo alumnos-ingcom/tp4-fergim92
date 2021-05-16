@@ -3,7 +3,7 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-import tp4_ej1 as soporte
+from tp4_ej1 import ingreso_entero
 
 def division_lenta(dividendo, divisor):
     cociente = 0
@@ -47,8 +47,8 @@ def division_lenta(dividendo, divisor):
     print(f'El resto de la division es: {resto}')
     
 def prueba():
-    dividendo = soporte.ingreso_entero('Ingrese el dividendo:')
-    divisor = soporte.ingreso_entero('Ingrese el divisor:')
+    dividendo = ingreso_entero('Ingrese el dividendo:')
+    divisor = ingreso_entero('Ingrese el divisor:')
     division_lenta(dividendo, divisor)
     
     

@@ -3,7 +3,7 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-import tp4_ej1 as soporte
+from tp4_ej1 import ingreso_entero
  
 def compara(numero, otro_numero):
     if numero < otro_numero:
@@ -24,7 +24,7 @@ def prueba():
 """
     print(f'Comparacion de numeros\n {condiciones}')
     numero = soporte.ingreso_entero('Ingrese el primer numero: ')
-    otro_numero = soporte.ingreso_entero('Ingrese otro numero')
+    otro_numero = ingreso_entero('Ingrese otro numero')
     
     resultado = compara(numero, otro_numero)
     

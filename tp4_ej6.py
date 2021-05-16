@@ -3,7 +3,7 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-import tp4_ej1 as soporte
+from tp4_ej1 import ingreso_entero
 
 def maximo(lista):
     maxx = -999999
@@ -26,7 +26,7 @@ def minimo(lista):
    
 def prueba():
     print('Digite una lista de numeros enteros')
-    cantidad_numeros = soporte.ingreso_entero('¿Cuantos numeros tendra su lista?')
+    cantidad_numeros = ingreso_entero('¿Cuantos numeros tendra su lista?')
     
     if cantidad_numeros <= 0:
         mensaje = print('La cantidad de numeros de su lista no puede ser menor o igual a 0')
@@ -34,7 +34,7 @@ def prueba():
     
     lista = []
     for i in range(cantidad_numeros):
-        n = soporte.ingreso_entero(f'Ingrese el numero {i+1}/{cantidad_numeros}')
+        n = ingreso_entero(f'Ingrese el numero {i+1}/{cantidad_numeros}')
         lista.append(n)
     
     min_lista = minimo(lista)

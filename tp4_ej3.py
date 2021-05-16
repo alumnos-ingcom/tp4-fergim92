@@ -3,8 +3,7 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-class IngresoIncorrecto(Exception):
-    pass
+from tp4_ej1 import IngresoIncorrecto
 
 def convertir_a_fahrenheit(centigrados):
     try:

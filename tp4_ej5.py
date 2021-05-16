@@ -3,7 +3,7 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-import tp4_ej1 as soporte
+from tp4_ej1 import ingreso_entero
 
 def signo(numero):
     if numero > 0:
@@ -16,7 +16,7 @@ def signo(numero):
 
 def prueba():
     print('Numeros positivos y negativos')
-    numero = soporte.ingreso_entero('Ingrese un numero')
+    numero = ingreso_entero('Ingrese un numero')
     signo(numero)
 
 
