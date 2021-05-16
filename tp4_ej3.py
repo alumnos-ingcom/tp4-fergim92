@@ -14,7 +14,7 @@ def convertir_a_fahrenheit(centigrados):
     fahrenheit = (centigrados * 1.8) + 32
     return fahrenheit
     
-
+    
 def convertir_a_centigrados(fahrenheit):
     try:
         fahrenheit = float(fahrenheit)
@@ -23,7 +23,6 @@ def convertir_a_centigrados(fahrenheit):
     
     centigrados = (fahrenheit - 32) / 1.8
     centigrados = round(centigrados,2)
-    
     return centigrados
     
 def prueba():
@@ -42,8 +41,7 @@ def prueba():
     fahrenheit = input('Ingrese los grados Fahrenheit a convertir en Centigrados: ')
     centi = convertir_a_centigrados(fahrenheit)
     print(f'Son {centi} grados Centigrados')    
-        
-        
+            
 if __name__ == "__main__":
     prueba()
 

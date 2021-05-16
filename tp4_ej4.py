@@ -13,7 +13,6 @@ def compara(numero, otro_numero):
     else:
         return 1
 
-
 def prueba():
     condiciones = """
 +-------------------------------------------------+
@@ -23,11 +22,9 @@ def prueba():
 +-------------------------------------------------+
 """
     print(f'Comparacion de numeros\n {condiciones}')
-    numero = soporte.ingreso_entero('Ingrese el primer numero: ')
+    numero = ingreso_entero('Ingrese el primer numero')
     otro_numero = ingreso_entero('Ingrese otro numero')
-    
     resultado = compara(numero, otro_numero)
-    
     print(f'Respuesta: {resultado}')
     
 if __name__ == "__main__":

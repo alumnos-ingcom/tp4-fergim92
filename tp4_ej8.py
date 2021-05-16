@@ -21,8 +21,8 @@ def ordenar_mayor_a_menor(uno, dos, tres):
 def ordenar_menor_a_mayor(uno, dos, tres):
     lista = [uno, dos, tres]
     suma = uno + dos + tres              #sumamos los 3 numeros
-    maxim = maximo(lista)       #maximo de la lista usando la funcion del ejercicio anterior
-    mini = minimo(lista)        #minimo de la lista usando la funcion del ejercicio anterior
+    maxim = maximo(lista)                #maximo de la lista usando la funcion del ejercicio anterior
+    mini = minimo(lista)                 #minimo de la lista usando la funcion del ejercicio anterior
     n_medio = suma - mini - maxim        # a la suma total le restamos maximo y minimo y obtenemos el tercer numero que falta
     tupla = (mini, n_medio, maxim)
         
@@ -31,9 +31,9 @@ def ordenar_menor_a_mayor(uno, dos, tres):
             
 def prueba():
     print('Ingrese 3 numeros para ordenarlos de menor a mayor y luego de mayor a menor')
-    uno = ingreso_entero('Numero 1:')
-    dos = ingreso_entero('Numero 2:')
-    tres = ingreso_entero('Numero 3:')
+    uno = ingreso_entero('Numero 1')
+    dos = ingreso_entero('Numero 2')
+    tres = ingreso_entero('Numero 3')
     
     print('Ordenados de mayor a menor')
     tupla = ordenar_mayor_a_menor(uno, dos, tres)

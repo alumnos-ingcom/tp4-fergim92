@@ -2,28 +2,27 @@
 # Fernando Gimenez - @fergim92
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-from tp4_ej1 import ingreso_entero
-from tp4_ej1 import IngresoIncorrecto
+from tp4_ej1 import ingreso_entero,IngresoIncorrecto
 
 def suma_lenta(numero, otro_numero):
   
     limite = otro_numero     
-    if otro_numero < 0:             # Para no tener problemas con los numeros negativos en el rango del ciclo for
+    if otro_numero < 0:            # Para no tener problemas con los numeros negativos en el rango del ciclo for
         limite *= -1
         
     for i in range(limite):
         if otro_numero < 0:
             resultado = numero - i-1
-            print(f'{numero-i} + (-1) = {resultado} ')
+            print(f'{numero-i} + (-1) = {resultado}')
         else:
             resultado = numero + i+1
-            print(f'{numero+i} + 1 = {resultado} ')
+            print(f'{numero+i} + 1 = {resultado}')
     return resultado
             
 def prueba():
-   print('Ingrese 2 numeros para sumarlos')
-   numero = ingreso_entero('Ingrese un numero: ')
-   otro_numero = ingreso_entero('Ingrese otro numero: ')
+   print('Ingrese 2 numeros para sumarlos ')
+   numero = ingreso_entero('Ingrese un numero')
+   otro_numero = ingreso_entero('Ingrese otro numero')
    suma_lenta(numero, otro_numero)
       
 if __name__ == "__main__":        

@@ -14,7 +14,9 @@ def es_palindromo(texto):
             coincidencias +=1
             if coincidencias == cantidad_caracteres:
                 return True
-
+        else:
+            return False
+    
 def prueba():
     texto = input('Ingrese una palabra o frase para saver si se trata de un palindromo: ')
     print(es_palindromo(texto))

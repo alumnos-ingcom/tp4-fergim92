@@ -7,18 +7,22 @@ from tp4_ej1 import ingreso_entero
 
 def signo(numero):
     if numero > 0:
-        print('El numero es positivo')
+        return '+'
     elif numero < 0:
-        print('El numero es negativo')
+        return '-'
     else:
-        print('El numero es 0')
-
+        return '='
 
 def prueba():
     print('Numeros positivos y negativos')
     numero = ingreso_entero('Ingrese un numero')
-    signo(numero)
-
+    
+    if signo(numero) == '+':
+        print('Es positivo')
+    elif signo(numero) == '-':
+        print('Es negativo')
+    else:
+        print('Es igual a cero')
 
 if __name__ == "__main__":
     prueba()

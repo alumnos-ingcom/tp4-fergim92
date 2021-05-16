@@ -3,14 +3,14 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-from tp4_ej1 import ingreso_entero
+from tp4_ej1 import ingreso_entero,IngresoIncorrecto
 
 def division_lenta(dividendo, divisor):
     cociente = 0
     
     if divisor == 0:
-        mensaje = print('NO SE PUEDE DIVIDIR POR CERO!!!')
-        return mensaje
+        raise IngresoIncorrecto("¡¡¡No se puede dividir por cero!!!") 
+    
     elif dividendo == 0:
         cociente = 0
         resto = divisor
@@ -47,10 +47,9 @@ def division_lenta(dividendo, divisor):
     print(f'El resto de la division es: {resto}')
     
 def prueba():
-    dividendo = ingreso_entero('Ingrese el dividendo:')
-    divisor = ingreso_entero('Ingrese el divisor:')
+    dividendo = ingreso_entero('Ingrese el dividendo')
+    divisor = ingreso_entero('Ingrese el divisor')
     division_lenta(dividendo, divisor)
-    
     
 if __name__ == "__main__":
     prueba()

@@ -3,25 +3,23 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-from tp4_ej1 import ingreso_entero
+from tp4_ej1 import ingreso_entero,IngresoIncorrecto
 
 def maximo(lista):
     maxx = -999999
-    cantidad_elementos = len(lista)
-    
-    for i in range(cantidad_elementos):
-        if lista[i] > maxx:
-            maxx = lista[i]
+      
+    for item in lista:
+        if item > maxx:
+            maxx = item
     return maxx
 
 
 def minimo(lista):
     minimo = 999999
-    cantidad_elementos = len(lista)
     
-    for i in range(cantidad_elementos):
-        if lista[i] < minimo:
-            minimo = lista[i]
+    for item in lista:
+        if item < minimo:
+            minimo = item
     return minimo
    
 def prueba():
@@ -29,8 +27,7 @@ def prueba():
     cantidad_numeros = ingreso_entero('¿Cuantos numeros tendra su lista?')
     
     if cantidad_numeros <= 0:
-        mensaje = print('La cantidad de numeros de su lista no puede ser menor o igual a 0')
-        return mensaje
+        raise IngresoIncorrecto("¡¡¡La cantidad de numeros de su lista no puede ser menor o igual a 0!!!") 
     
     lista = []
     for i in range(cantidad_numeros):
