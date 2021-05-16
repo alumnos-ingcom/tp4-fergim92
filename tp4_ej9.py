@@ -2,7 +2,7 @@
 # Fernando Gimenez - @fergim92
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-import tp4_ej1 as soporte
+from tp4_ej1 import ingreso_entero 
 
 def es_primo(numero):
     divisores = 0
@@ -14,7 +14,7 @@ def es_primo(numero):
     
 
 def prueba():
-    numero = soporte.ingreso_entero('Digite un numero para saber si es primo')
+    numero = ingreso_entero('Digite un numero para saber si es primo')
     print(es_primo(numero))
 
 if __name__ == "__main__":
